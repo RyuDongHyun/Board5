@@ -1,0 +1,14 @@
+<h1><%= @post.id%>째 글</h1>
+<p>제목 : <%= @post.title%></p>
+<p>내용 : <%= @post.content%></p>
+<a href="/">뒤로</a>
+
+
+<form action="/posts/<%= @post.id%>/write_reply">
+    <input name="comment" type="text">
+    <input type="submit" value="댓글작성">
+</form>
+
+<% @post.replies.reverse.each do |p|%>
+<p><%= p.user.name%> : <%= p.comment%></p>
+<% end %>

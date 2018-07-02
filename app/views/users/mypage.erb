@@ -1,0 +1,5 @@
+<h1>내가 쓴 글들</h1>
+<% @posts.each do |p|%>
+<p>제목 : <%= p.title%></p>
+<p>내용 : <%= p.content%></p>
+<% end%>
